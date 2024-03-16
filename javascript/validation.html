@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <table border="4" align="center">
+            <tr>
+                <td><label for="">user name</label></td>
+                <td><input onblur="checkvalid(this,'usernameerror')" placeholder="enter user name" name="username" id="username">
+                <span id="usernameerror"></span>  </td>  
+            </tr>
+            <script>
+                function checkvalid() {
+                    //usernameval = document.getElementById("username")
+                    //console.log(usernameval)
+                    //console.log(usernameval.value);
+                    if (usernameval.value == "") {
+                     document.getElementById("usernameerror").innerHTML ="<i> this is invalid </i>"
+                    }
+                }
+            </script>
+            
+            <tr>
+                <td><label for="">password</label></td>
+                <td><input onblur="checkvalid(this,'passperror')" placeholder="enter user password" name="enter password" id="password">
+                    <span id="passperror"></span>    </td>
+            </tr>
+            <tr>
+                <td><label for="">email</label></td>
+                <td><input onblur="checkvalid(this,'emailerror')" placeholder="enter email" name="email" id="email" required>
+                <span id="emailerror"><span> </td>
+            </tr>
+            <script>
+                function checkvalid(kuchbi,spnid) {
+                    if (kuchbi.value == "") {
+                        document.getElementById(spnid).innerHTML = "<i> filed this </i>"   
+                    }else{
+                        document.getElementById(spnid).innerHTML = ""
+                    }
+                }
+            </script>
+            <td>
+                <input onblur="checkvalid()" type="radio" name="gender" value="male" id="">male
+                <input onblur="checkvalid()" type="radio" name="gender" value="female" id="">female
+            </td>
+            <tr>
+            <td>
+                <input type="submit" name="save" id="submit">
+            </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
